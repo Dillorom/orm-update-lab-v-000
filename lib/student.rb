@@ -32,6 +32,7 @@ class Student
         DB[:conn].execute(sql, self.name, self.grade)
         @id = DB[:conn].execute("SELECT * FROM students")[0][0]
     end
+  end
 
     def self.create(name:, grade:)
       student = Student.new(name, grade)
@@ -43,9 +44,7 @@ class Student
       sql = "UPDATE students SET name = ?, grade = ?, id = ?"
       DB[:conn].execute(sql, self.name, self.grade, self.id)
     end
-  end
-
-
+  
   def self.create_table
     sql = <<-SQL
       CREATE TABLE IF NOT EXISTS students (
