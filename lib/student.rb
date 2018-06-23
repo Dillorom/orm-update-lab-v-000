@@ -69,6 +69,7 @@ class Student
   end
 
   def self.find_by_name(name)
+    binding.pry
     self.all.find {|a| a.name == name}
   end
 end
