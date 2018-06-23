@@ -74,8 +74,8 @@ class Student
     #self.all.detect{|a| a.name == name}
 
     sql = "SELECT * FROM students WHERE name = ?"
-    result = DB[:conn].execute(sql, name)
-      binding.pry
+    result = DB[:conn].execute(sql, name)[0]
+      #binding.pry
     Student.new(result[1], result[2], result[0])
   end
 end
