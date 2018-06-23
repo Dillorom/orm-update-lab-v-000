@@ -6,7 +6,7 @@ class Student
   attr_reader :id
 
   @@all = []
-  
+
   def initialize(id = nil, name, grade)
     @id = id
     @name = name
@@ -14,10 +14,10 @@ class Student
     @@all << self
   end
 
-  def self.all 
-    @@all 
+  def self.all
+    @@all
   end
- 
+
   def save
       if self.id
         self.update
