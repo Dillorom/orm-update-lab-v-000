@@ -68,8 +68,8 @@ class Student
      self.new(id, name, grade)
   end
 
-  def self.find_by_name(name)
+  def self.find_by_name(id)
     binding.pry
-    self.all.find {|a| a.name == name}
+    self.all.find {|a| a.id == id}
   end
 end
